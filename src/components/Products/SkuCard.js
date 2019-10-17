@@ -54,7 +54,8 @@ const SkuCard = class extends React.Component {
 			<div style={cardStyles}>
 				<h4>{sku.attributes.name}</h4>
 				<p>Price: {formatPrice(sku.price, sku.currency)}</p>
-				<button style={buttonStyles} onClick={event => this.redirectToCheckout(event, sku.id)}>
+				<img src={sku.image} alt="" />
+				<button className="waves-light btn" onClick={event => this.redirectToCheckout(event, sku.id)}>
 					BUY ME
 				</button>
 			</div>
@@ -63,3 +64,5 @@ const SkuCard = class extends React.Component {
 };
 
 export default SkuCard;
+
+// style={buttonStyles}

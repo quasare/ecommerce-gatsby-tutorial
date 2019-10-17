@@ -18,7 +18,7 @@ class Skus extends Component {
 		stripe : null
 	};
 	componentDidMount() {
-		const stripe = window.Stripe("pk_test_ZBwOYcZOBbFzpgkWJ0pTBNX5006OBMpJ5h");
+		const stripe = window.Stripe('pk_test_ZBwOYcZOBbFzpgkWJ0pTBNX5006OBMpJ5h');
 		this.setState({ stripe });
 	}
 
@@ -35,6 +35,9 @@ class Skus extends Component {
 									price
 									attributes {
 										name
+									}
+									inventory {
+										type
 									}
 								}
 							}
