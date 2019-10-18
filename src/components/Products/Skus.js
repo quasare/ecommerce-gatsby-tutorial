@@ -10,6 +10,8 @@ const conatinerStyles = {
 	padding        : '1rem 0 1rem 0'
 };
 
+
+
 class Skus extends Component {
 	// Initialise Stripe.js with your publishable key.
 	// You can find your key in the Dashboard:
@@ -33,6 +35,7 @@ class Skus extends Component {
 									id
 									currency
 									price
+									image
 									attributes {
 										name
 									}

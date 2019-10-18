@@ -1,28 +1,39 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const cardStyles = {
-	display         : 'flex',
-	flexDirection   : 'column',
-	justifyContent  : 'space-around',
-	alignItems      : 'flex-start',
-	padding         : '1rem',
-	marginBottom    : '1rem',
-	boxShadow       : '5px 5px 25px 0 rgba(46,61,73,.2)',
-	backgroundColor : '#fff',
-	borderRadius    : '6px',
-	maxWidth        : '300px'
-};
-const buttonStyles = {
-	fontSize        : '13px',
-	textAlign       : 'center',
-	color           : '#fff',
-	outline         : 'none',
-	padding         : '12px',
-	boxShadow       : '2px 5px 10px rgba(0,0,0,.1)',
-	backgroundColor : 'rgb(255, 178, 56)',
-	borderRadius    : '6px',
-	letterSpacing   : '1.5px'
-};
+const StyledCard = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, .2);
+	background-color: #fff;
+	border-radius: 6px;
+	max-width: 300px;
+`;
+
+const StyledButton = styled.button`
+	font-size: 13px;
+	text-align: center;
+	color: #fff;
+	outline: none;
+	padding: 12px;
+	box-shadow: 2px, 5px, 10px rgba(0, 0, 0, .1);
+	background-color: #e2b5c3;
+	border-radius: 6px;
+	letter-spacing: 1.5px;
+	&:hover {
+		cursor: pointer;
+		filter: brightness(105%);
+	}
+`;
+
+const StyledImage = styled.img`
+	height: 20rem;
+	width: 15rem;
+`
 
 const formatPrice = (amount, currency) => {
 	let price = (amount / 100).toFixed(2);
@@ -51,14 +62,12 @@ const SkuCard = class extends React.Component {
 	render() {
 		const sku = this.props.sku;
 		return (
-			<div style={cardStyles}>
+			<StyledCard>
 				<h4>{sku.attributes.name}</h4>
 				<p>Price: {formatPrice(sku.price, sku.currency)}</p>
-				<img src={sku.image} alt="" />
-				<button className="waves-light btn" onClick={event => this.redirectToCheckout(event, sku.id)}>
-					BUY ME
-				</button>
-			</div>
+				<StyledImage src={sku.image} alt="" />
+				<StyledButton onClick={event => this.redirectToCheckout(event, sku.id)}>BUY ME</StyledButton>
+			</StyledCard>
 		);
 	}
 };
