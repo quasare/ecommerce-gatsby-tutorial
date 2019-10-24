@@ -33,7 +33,11 @@ const StyledButton = styled.button`
 const StyledImage = styled.img`
 	height: 20rem;
 	width: 15rem;
-`
+	&:hover {
+		transform: scale(1.05);
+		transition: all 500ms;
+	}
+`;
 
 const formatPrice = (amount, currency) => {
 	let price = (amount / 100).toFixed(2);

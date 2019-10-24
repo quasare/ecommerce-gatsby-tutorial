@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-
 const HeaderStyle = styled.header`
-  background: #20232a;
-  margin-bottom: 1.45rem
+	background: #20232a;
+	margin-bottom: 1.45rem;
 `;
 
 const StyledLink = styled(Link)`
@@ -15,9 +14,10 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   &:hover{
 	filter: brightness(105%);
+	
   }
   
-`
+`;
 
 const Header = ({ siteTitle }) => (
 	<HeaderStyle>
@@ -27,19 +27,43 @@ const Header = ({ siteTitle }) => (
 				maxWidth : 960,
 				padding  : `1.45rem 1.0875rem`
 			}}>
-			<h1 style={{ margin: 0 }}>
+			<h1
+				style={{
+					margin : 0
+				}}>
 				<Link
 					to="/"
 					style={{
 						color          : `white`,
 						textDecoration : `none`
 					}}>
-					{siteTitle}
-				</Link>
-			</h1>
-			<StyledLink to="/"  activeStyle={{ color: "blue" }}> Home </StyledLink>
-			<StyledLink to="/store" activeStyle={{ color: "blue" }} > Store </StyledLink>
-			<StyledLink to="/" activeStyle={{ color: "blue" }}> Contact Us </StyledLink>
+					{' '}
+					{siteTitle}{' '}
+				</Link>{' '}
+			</h1>{' '}
+			<StyledLink
+				to="/"
+				activeStyle={{
+					color : '#e5e5e5e5'
+				}}>
+				{' '}
+				Home{' '}
+			</StyledLink>{' '}
+			<StyledLink
+				to="/store"
+				activeStyle={{
+					color : '#e5e5e5e5'
+				}}>
+				{' '}
+				Store{' '}
+			</StyledLink>{' '}
+			<StyledLink
+				to="/aboutUs/"
+				activeStyle={{
+					color : '#e5e5e5e5'
+				}}>
+				About Us
+			</StyledLink>
 		</div>
 	</HeaderStyle>
 );

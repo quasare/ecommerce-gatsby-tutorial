@@ -1,19 +1,55 @@
 import React from 'react';
 import { Link } from 'gatsby';
-
 import Layout from '../components/layout';
-import Image from '../components/image';
 import SEO from '../components/seo';
+import Main from '../images/Main.jpg';
+import styled from 'styled-components';
 
-import Checkout from '../components/checkout';
+const Image = styled.img`
+	position: absolute;
+	z-index: -1;
+	width: 50%;
+	height: 25rem;
+`;
+
+const StyledButton = styled(Link)`
+	font-size: 13px;
+	text-align: center;
+	color: #fff;
+	outline: none;
+	padding: 12px;
+	text-decoration: none;
+	box-shadow: 2px, 5px, 10px rgba(0, 0, 0, .1);
+	background-color: #e2b5c3;
+	border-radius: 6px;
+	letter-spacing: 1.5px;
+	&:hover {
+		cursor: pointer;
+		filter: brightness(105%);
+	}
+`;
+
+const StyledBody = styled.div`
+	color: white;
+	font-size: 2.15rem;
+	/* text-align: center; */
+	margin: 1rem;
+	padding-top: 5rem;
+`;
+
+const H1 = styled.h1`
+/* text-align: center !important; */
+`;
 
 const IndexPage = () => (
 	<Layout>
-		<SEO title="Home" keywords={[ `Ecommerce`, `application`, `shirt`, `test` ]} />
-		<h1>Look no Further for your Favorite Hoodie</h1>
-		<p>Find your favorite Hoodie</p>
-		<p>Stay warm and stylish</p>
-		<Link to="/store/"> Store </Link>
+		<SEO title="Home" keywords={[ `Ecommerce`, `application`, `hoodie`, `test` ]} />
+		<H1>Find your favorite Hoodie</H1>
+		<Image src={Main} alt="Main" />
+		<StyledBody>
+			<p>Stay warm and stylish</p>
+			<StyledButton to="/store/"> Shop Now </StyledButton>
+		</StyledBody>
 	</Layout>
 );
 
