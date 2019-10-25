@@ -86,8 +86,8 @@ const SkuCard = class extends React.Component {
 			<
 			StyledButton onClick = {
 				event => this.redirectToCheckout(event, sku.id)
-			} > BUY ME < /StyledButton> <
-			/StyledCard>
+			} > BUY ME < /StyledButton> < /
+			StyledCard >
 		);
 	}
 };
