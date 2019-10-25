@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledCard = styled.div `
+const StyledCard = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -14,14 +14,14 @@ const StyledCard = styled.div `
 	max-width: 300px;
 `;
 
-const StyledButton = styled.button `
+const StyledButton = styled.button`
 	font-size: 13px;
 	text-align: center;
 	color: #fff;
 	outline: none;
 	padding: 12px;
 	box-shadow: 2px, 5px, 10px rgba(0, 0, 0, .1);
-	background-color: #077CBC;
+	background-color: #077cbc;
 	border-radius: 6px;
 	letter-spacing: 1.5px;
 	&:hover {
@@ -30,7 +30,7 @@ const StyledButton = styled.button `
 	}
 `;
 
-const StyledImage = styled.img `
+const StyledImage = styled.img`
 	height: 20rem;
 	width: 15rem;
 	&:hover {
@@ -41,10 +41,10 @@ const StyledImage = styled.img `
 
 const formatPrice = (amount, currency) => {
 	let price = (amount / 100).toFixed(2);
-	let numberFormat = new Intl.NumberFormat(['en-US'], {
-		style: 'currency',
-		currency: currency,
-		currencyDisplay: 'symbol'
+	let numberFormat = new Intl.NumberFormat([ 'en-US' ], {
+		style           : 'currency',
+		currency        : currency,
+		currencyDisplay : 'symbol'
 	});
 	return numberFormat.format(price);
 };
@@ -52,15 +52,15 @@ const formatPrice = (amount, currency) => {
 const SkuCard = class extends React.Component {
 	async redirectToCheckout(event, sku, quantity = 1) {
 		event.preventDefault();
-		const {
-			error
-		} = await this.props.stripe.redirectToCheckout({
-			items: [{
-				sku,
-				quantity
-			}],
-			successUrl: `http://localhost:8000/page-2/`,
-			cancelUrl: `http://localhost:8000/advanced`
+		const { error } = await this.props.stripe.redirectToCheckout({
+			items      : [
+				{
+					sku,
+					quantity
+				}
+			],
+			successUrl : `http://localhost:8000/page-2/`,
+			cancelUrl  : `http://localhost:8000/advanced`
 		});
 
 		if (error) {
@@ -70,24 +70,12 @@ const SkuCard = class extends React.Component {
 
 	render() {
 		const sku = this.props.sku;
-		return ( <
-			StyledCard >
-			<
-			h4 > {
-				sku.attributes.name
-			} < /h4> <
-			p > Price: {
-				formatPrice(sku.price, sku.currency)
-			} < /p> <
-			StyledImage src = {
-				sku.image
-			}
-			alt = "" / >
-			<
-			StyledButton onClick = {
-				event => this.redirectToCheckout(event, sku.id)
-			} > BUY ME < /StyledButton> < /
-			StyledCard >
+		return (
+			<StyledCard>
+				<h4> {sku.attributes.name} </h4> <p> Price: {formatPrice(sku.price, sku.currency)} </p>{' '}
+				<StyledImage src={sku.image} alt="" />
+				<StyledButton onClick={event => this.redirectToCheckout(event, sku.id)}> BUY ME </StyledButton>{' '}
+			</StyledCard>
 		);
 	}
 };
