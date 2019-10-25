@@ -4,6 +4,7 @@ html {
   -webkit-text-size-adjust: 100%;
   position: relative;
   min-height: 100%;
+  color: white;
 }
 
 body {
@@ -12,6 +13,12 @@ body {
   margin: 0 0 100px;
   /* bottom = footer height */
   /* padding: 25px; */
+  background-image: url(../images/Main.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 article,

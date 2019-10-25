@@ -12,7 +12,7 @@ const StyledButton = styled(Link)`
 	padding: 12px;
 	text-decoration: none;
 	box-shadow: 2px, 5px, 10px rgba(0, 0, 0, .1);
-	background-color: #e2b5c3;
+	background-color: #077CBC;
 	border-radius: 6px;
 	letter-spacing: 1.5px;
 	&:hover {
@@ -21,16 +21,20 @@ const StyledButton = styled(Link)`
 	}
 `;
 
+const Body = styled.div`color: white;`;
+
 const aboutUs = () => (
 	<Layout>
 		<SEO title="About Us" />
-		<h1>About Us</h1>
-		<p>
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores dolorum, beatae ipsam corporis cum sit
-			fugit aspernatur blanditiis, quaerat cupiditate, labore obcaecati ducimus! Cupiditate hic voluptatem commodi
-			deserunt quasi dolorem!
-		</p>
-		<StyledButton to="/">Home</StyledButton>
+		<Body>
+			<h1>About Us</h1>
+			<p>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores dolorum, beatae ipsam corporis cum sit
+				fugit aspernatur blanditiis, quaerat cupiditate, labore obcaecati ducimus! Cupiditate hic voluptatem
+				commodi deserunt quasi dolorem!
+			</p>
+			<StyledButton to="/">Home</StyledButton>
+		</Body>
 	</Layout>
 );
 

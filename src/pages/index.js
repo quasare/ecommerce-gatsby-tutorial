@@ -18,9 +18,10 @@ const StyledButton = styled(Link)`
 	color: #fff;
 	outline: none;
 	padding: 12px;
+	margin-top: 2rem;
 	text-decoration: none;
 	box-shadow: 2px, 5px, 10px rgba(0, 0, 0, .1);
-	background-color: #e2b5c3;
+	background-color: #077CBC;
 	border-radius: 6px;
 	letter-spacing: 1.5px;
 	&:hover {
@@ -32,20 +33,20 @@ const StyledButton = styled(Link)`
 const StyledBody = styled.div`
 	color: white;
 	font-size: 2.15rem;
-	/* text-align: center; */
+	text-align: center;
 	margin: 1rem;
 	padding-top: 5rem;
 `;
 
 const H1 = styled.h1`
-/* text-align: center !important; */
+	text-align: center !important;
+	color: white;
 `;
 
 const IndexPage = () => (
 	<Layout>
 		<SEO title="Home" keywords={[ `Ecommerce`, `application`, `hoodie`, `test` ]} />
 		<H1>Find your favorite Hoodie</H1>
-		<Image src={Main} alt="Main" />
 		<StyledBody>
 			<p>Stay warm and stylish</p>
 			<StyledButton to="/store/"> Shop Now </StyledButton>

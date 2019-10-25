@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import SkuCard from './SkuCard';
+import styled from 'styled-components';
 
 const conatinerStyles = {
 	display        : 'flex',
@@ -9,6 +10,16 @@ const conatinerStyles = {
 	justifyContent : 'space-between',
 	padding        : '1rem 0 1rem 0'
 };
+
+const Conatainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 1rem 0 1rem 0;
+	@media (max-width: 768px) {justify-content: center !important;}
+	
+`;
 
 
 
@@ -48,11 +59,11 @@ class Skus extends Component {
 					}
 				`}
 				render={({ skus }) => (
-					<div style={conatinerStyles}>
+					<Conatainer style={conatinerStyles}>
 						{skus.edges.map(({ node: sku }) => (
 							<SkuCard key={sku.id} sku={sku} stripe={this.state.stripe} />
 						))}
-					</div>
+					</Conatainer>
 				)}
 			/>
 		);
