@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.15.34",
     "gatsby-image": "^2.2.25",
     "gatsby-plugin-favicon": "^3.1.6",
@@ -13,6 +14,7 @@
     "gatsby-plugin-react-helmet": "^3.1.11",
     "gatsby-plugin-sharp": "^2.2.29",
     "gatsby-plugin-stripe": "^1.2.3",
+    "gatsby-plugin-styled-components": "^3.1.11",
     "gatsby-source-filesystem": "^2.1.31",
     "gatsby-source-stripe": "^3.0.4",
     "gatsby-transformer-sharp": "^2.2.21",

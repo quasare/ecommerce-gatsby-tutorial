@@ -57,13 +57,7 @@ const Header = ({ siteTitle }) => (
 				{' '}
 				Store{' '}
 			</StyledLink>{' '}
-			<StyledLink
-				to="/aboutUs/"
-				activeStyle={{
-					color : '#e5e5e5e5'
-				}}>
-				About Us
-			</StyledLink>
+			
 		</div>
 	</HeaderStyle>
 );
